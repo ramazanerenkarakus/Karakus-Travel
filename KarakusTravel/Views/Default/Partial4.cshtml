@@ -1,0 +1,18 @@
+﻿@using KarakusTravel.Models.Siniflar
+@model List<Blog>
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>  <!--EN BEĞENDİĞİM YERLER KISMI (SAĞ ALT 3'LÜNÜN SOL TARAFI)-->
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            <div class="bot-img">
+                <img src="@x.BlogImage" style="width:120px;height:65px;" alt="" />
+            </div>
+            <div class="bot-desc">
+                <p>@x.Aciklama.Substring(0, 70)...</p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    @Html.Action("Partial5", "Default")
+</div>
